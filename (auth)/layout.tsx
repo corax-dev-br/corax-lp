@@ -7,9 +7,11 @@ export default function AuthLayout({
 }) {
   return (
     <main className="relative flex grow flex-col">
-      <PageIllustration multiple />
+      <PageIllustration />
 
       {children}
+      <PageIllustration />
+
     </main>
   );
 }

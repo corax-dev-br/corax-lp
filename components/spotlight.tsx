@@ -51,8 +51,8 @@ export default function Spotlight({
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const { w, h } = containerSize.current;
-      const x = mousePosition.x - rect.left;
-      const y = mousePosition.y - rect.top;
+      const x = mousePosition.x - rect.left+70;
+      const y = mousePosition.y - rect.top+55;
       const inside = x < w && x > 0 && y < h && y > 0;
       if (inside) {
         mouse.current.x = x;
@@ -63,7 +63,7 @@ export default function Spotlight({
           const boxY =
             -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
           box.style.setProperty("--mouse-x", `${boxX}px`);
-          box.style.setProperty("--mouse-y", `${boxY}px`);
+          box.style.setProperty("--mouse-y", `${boxY + 10}px`); // Adjust the offset here
         });
       }
     }
